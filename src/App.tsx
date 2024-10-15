@@ -10,6 +10,7 @@ const App: React.FC = () => {
 		window.onload = () => {
 			// Create a WebSocket connection to the Go Server
 			const wsUrl = process.env.WEBSOCKET_URL || 'ws://localhost:8080/ws';
+			console.log('WebSocket URL:', wsUrl);
 			const ws = new WebSocket(wsUrl);
 
 			// Event listener for the connection close event
