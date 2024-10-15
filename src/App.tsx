@@ -9,7 +9,8 @@ const App: React.FC = () => {
 	useEffect(() => {
 		window.onload = () => {
 			// Create a WebSocket connection to the Go Server
-			const ws =  new WebSocket('ws://localhost:8080/ws');
+			const wsUrl = process.env.WEBSOCKET_URL || 'ws://localhost:8080/ws';
+			const ws = new WebSocket(wsUrl);
 
 			// Event listener for the connection close event
 			ws.onclose = () => {
